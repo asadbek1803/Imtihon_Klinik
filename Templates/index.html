@@ -115,24 +115,26 @@
             <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
                 <h1 class="display-4 text-white mb-5">Good Health Is The Root Of All Heppiness</h1>
                 <div class="row g-4">
+                    {% for statics in Statics %}
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">123</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">{{statics.expert_doctors}}</h2>
                             <p class="text-light mb-0">Expert Doctors</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">1234</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">{{statics.medical_stuff}}</h2>
                             <p class="text-light mb-0">Medical Stuff</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">12345</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">{{statics.patients}}</h2>
                             <p class="text-light mb-0">Total Patients</p>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -196,6 +198,7 @@
                 <h1>Health Care Solutions</h1>
             </div>
             <div class="row g-4">
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">

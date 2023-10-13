@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from .models import Statics
 # Create your views here.
 
 
@@ -9,8 +9,12 @@ def login_u(request):
     return render(request, "login.html")
 
 def home(request): # Asosiy page uchun
+
     if request.user.is_authenticated:
-        return render(request, "index.html")
+        data = {
+            "Statics": Statics.objects.all()
+        }
+        return render(request, "index.html", data)
     else:
         return redirect("/login/")
 
