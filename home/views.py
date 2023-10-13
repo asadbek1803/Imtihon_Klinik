@@ -1,13 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
 
 
+def login_u(request):
+
+    return render(request, "login.html")
+
 def home(request): # Asosiy page uchun
-
-    return render(request, "index.html")
-
+    if request.user.is_authenticated:
+        return render(request, "index.html")
+    else:
+        return redirect("/login/")
 
 def Error404(request): # Mavjud emas Page
     return render(request, "404.html")
