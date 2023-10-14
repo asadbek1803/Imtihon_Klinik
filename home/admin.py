@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from .models import Statics, Album_home, About_Us, Services, Features, Doctors, Appointment, Testimonial
+from .models import Statics, Album_home, About_Us, Services, Features, Doctors, Appointment, Testimonial, Contact
 # Register your models here.
 admin.site.register(About_Us)
 
@@ -46,3 +46,7 @@ class TestersAdmin(ModelAdmin):
     list_editable = ('job', 'text')
     search_fields = ('full_name', 'job')
 
+@admin.register(Contact)
+class ContactAdmin(ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'message')
+    search_fields = ('name', 'email')

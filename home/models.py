@@ -45,6 +45,7 @@ class Features(models.Model):
         return self.title
 
 class Doctors(models.Model):
+
     image = models.ImageField(upload_to='doctors/images/')
     full_name = models.CharField(max_length=140)
     staff_name = models.CharField(max_length=140)
@@ -81,3 +82,11 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.full_name
 
+class Contact(models.Model):
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    subject = models.CharField(max_length=90)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
