@@ -10,6 +10,23 @@ class Statics(models.Model):
     def __str__(self):
         return f"Experts: {self.expert_doctors}, Stuff: {self.medical_stuff}"
 
+
+class Album_home(models.Model): #bajarildi
+    image_name = models.CharField(max_length=78)
+    image = models.ImageField(upload_to='home_album/images/')
+
+    def __str__(self):
+        return self.image_name
+
+class About_Us(models.Model):
+    text = models.TextField()
+
+
+    def __str__(self):
+        return self.text
+
+
+
 class Services(models.Model):
     icon = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
@@ -45,9 +62,9 @@ class Appointment(models.Model):
     name = models.CharField(max_length=140)
     email = models.EmailField()
     phone = models.CharField(max_length=19)
-    doctor = models.ForeignKey(Doctors, on_delete=models.Model)
-    date = models.DateField(auto_now=False)
-    datetime = models.DateTimeField(auto_now=False)
+    doctor = models.CharField(max_length=90)
+    date = models.DateField(auto_now=True)
+    datetime = models.DateTimeField(auto_now=True)
     about = models.TextField()
 
 
