@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-x8e*0fm+%k7oxwj_3ot@e85gnali5dls6c4+g=*ymy^*^z4z%y
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://imtihon-klinik-3.onrender.com']
 
 
 # Application definition
