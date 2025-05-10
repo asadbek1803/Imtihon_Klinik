@@ -29,7 +29,7 @@ def login_u(request):
 
 def home(request):  # Asosiy page uchun
 
-    if request.user.is_authenticated:
+    
         if request.POST:
             name = request.POST.get('name')
             email = request.POST.get('email')
@@ -53,8 +53,7 @@ def home(request):  # Asosiy page uchun
 
         }
         return render(request, "index.html", data)
-    else:
-        return redirect("/login/")
+    
 
 
 def Error404(request):  # Mavjud emas Page
@@ -164,7 +163,7 @@ def team(request):  # Team page
 
 
 def service(request):  # Service page
-    if request.user.is_authenticated:
+    
         if request.POST:
             name = request.POST.get('name')
             email = request.POST.get('email')
